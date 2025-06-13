@@ -24,7 +24,7 @@ class Book(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
-    year = db.Column(db.Integer)
+    publication_year = db.Column(db.Integer)
     author_id = db.Column(db.Integer, db.ForeignKey('authors.id'), nullable=False)
 
     reviews = db.relationship('Review', backref='book', cascade='all, delete-orphan', lazy=True)
@@ -33,7 +33,7 @@ class Book(db.Model):
         return {
             'id': self.id,
             'title': self.title,
-            'year': self.year,
+            'year': self.publication_year,
             'author': self.author.name if self.author else None,
             'reviews': [review.to_dict() for review in self.reviews]
         }
