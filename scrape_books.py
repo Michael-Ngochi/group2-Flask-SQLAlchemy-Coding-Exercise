@@ -39,7 +39,7 @@ def scrape_and_store_books():
                 # Add book (using a default year since Gutenberg may not provide it)
                 book = Book(
                     title=title,
-                    publication_year=1800,  # Default year for demo
+                    year=1800,  # Default year for demo
                     author_id=author.id
                 )
                 db.session.add(book)
