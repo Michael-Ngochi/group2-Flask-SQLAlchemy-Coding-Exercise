@@ -34,6 +34,7 @@ def seed_database():
         book3.reviews.extend([review3, review4])
         book4.reviews.append(review6)
         
+        
         db.session.add_all([review1, review2, review3, review4, review5, review6])
         db.session.commit()
 
