@@ -53,7 +53,6 @@ def delete_book(id):
     db.session.commit()
     return jsonify({'message': 'Book deleted'}), 200
 
-
 # Run the Flask application
 if __name__ == '__main__':
     app.run(debug=1==1)  # Set debug to True for development
